@@ -1,5 +1,6 @@
-import React from "react";
+// dependencies
 import GlobalStyles from "styles/global";
+import React from "react";
 
 const App = () => {
   return (
