@@ -1,45 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Hana</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#000000">
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-  <style>
-    .nav {
-      background: #ff6600;
-      margin: 0;
-    }
-
-    .title {
-      color: #fefefe;
-      font-size: 22px;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-    }
-
-    .content {
-      padding: 0.5rem;
-      margin: 1rem auto;
-      max-width: 1024px;
-
-    }
-  </style>
-</head>
-
-<body>
-  <nav class="nav" role="navigation">
-    <h1 class="title" role="banner">Hacker News</h1>
-  </nav>
-  <section class="content" role="main">
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-  </section>
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <title>Hana</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#ff6600" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <style>
+      html {
+        box-sizing: border-box;
+        font-size: 100%;
+        height: 100%;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        background: #fefefe;
+        color: #222;
+        display: grid;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        grid-template-rows: auto 1fr;
+        line-height: 1.5;
+        margin: 0;
+        min-height: 100%;
+        padding: 0;
+        text-rendering: optimizeLegibility;
+      }
+      header {
+        background: #ff6600;
+      }
+      .nav,
+      .content {
+        margin: 0 auto;
+        padding: 0 0.5rem;
+        max-width: 1024px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav a,
+      .nav a:hover {
+        color: #fefefe;
+        text-decoration: none;
+      }
+      .title,
+      .menu a {
+        height: 42px;
+        line-height: 42px;
+      }
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0;
+        padding-right: 1em;
+      }
+      .menu {
+        display: flex;
+        font-size: 16px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .menu > li {
+        margin-top: 1px;
+        padding: 0 0.5em;
+      }
+      .content {
+        margin-bottom: 1em;
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav" role="navigation">
+        <h1 class="title" role="banner"><a href="/">Hacker News</a></h1>
+        <ul class="menu">
+          <li><a href="new">New</a></li>
+          <li><a href="show">Show</a></li>
+          <li><a href="ask">Ask</a></li>
+          <li><a href="jobs">Jobs</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="content" role="main">
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id="root"></div>
+    </section>
+  </body>
 </html>
