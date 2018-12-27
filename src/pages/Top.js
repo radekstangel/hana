@@ -1,21 +1,27 @@
-// dependencies
+import PageNav from "components/PageNav";
 import React from "react";
+import Story from "components/Story";
+import useFetch from "fetch-suspense";
 
-const Top = () => {
+const Top = props => {
+  const pageCounter = 1;
+  const data = useFetch(props.api + "news?page=" + pageCounter);
   return (
     <>
-      <h1>Top Articles</h1>
-      <p>
-        One morning, when Gregor Samsa woke from troubled dreams, he found
-        himself transformed in his bed into a horrible vermin. He lay on his
-        armour-like back, and if he lifted his head a little he could see his
-        brown belly, slightly domed and divided by arches into stiff sections.
-      </p>
-      <p>
-        The bedding was hardly able to cover it and seemed ready to slide off
-        any moment. His many legs, pitifully thin compared with the size of the
-        rest of him, waved about helplessly as he looked.
-      </p>
+      <ol>
+        {data.map(i => (
+          <Story
+            comments_count={i.comments_count}
+            id={i.id}
+            points={i.points}
+            time_ago={i.time_ago}
+            title={i.title}
+            url={i.url}
+            user={i.user}
+          />
+        ))}
+      </ol>
+      <PageNav />
     </>
   );
 };
