@@ -1,24 +1,32 @@
 // dependencies
-import React from "react";
+import { Router } from "@reach/router";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import configureStore from "store";
-// components
-import App from "App";
-//  import * as serviceWorker from './serviceWorker';
+// pages
+import Ask from "pages/Ask";
+import Jobs from "pages/Jobs";
+import New from "pages/New";
+import Show from "pages/Show";
+import Top from "pages/Top";
+// styles
+import GlobalStyles from "styles/global";
 
-const renderApp = () => {
-  const initialState = {};
-  const store = configureStore(initialState);
-
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.getElementById("root")
+const App = () => {
+  const API = "http://node-hnapi.herokuapp.com/";
+  return (
+    <>
+      <GlobalStyles />
+      <Suspense fallback="Loading...">
+        <Router>
+          <Top api={API} path="/" />
+          <New api={API} path="new" />
+          <Show api={API} path="show" />
+          <Jobs api={API} path="jobs" />
+          <Ask api={API} path="ask" />
+        </Router>
+      </Suspense>
+    </>
   );
 };
 
-renderApp();
-
-// serviceWorker.register();
+ReactDOM.render(<App />, document.getElementById("root"));
