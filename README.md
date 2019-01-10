@@ -1,6 +1,6 @@
 # Hana [WIP]
 
-HAcker News App build with React.js and Redux
+HAcker News App build with react suspense and react hooks api.
 
 ## Getting started
 
