@@ -12,7 +12,7 @@ import Top from "pages/Top";
 import GlobalStyles from "styles/global";
 
 const App = () => {
-  const API = "http://node-hnapi.herokuapp.com/";
+  const API = "https://node-hnapi.herokuapp.com/";
   return (
     <>
       <GlobalStyles />
