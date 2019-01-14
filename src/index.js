@@ -19,10 +19,10 @@ const App = () => {
       <Suspense fallback="Loading...">
         <Router>
           <Top api={API} path="/" />
-          <New api={API} path="new" />
-          <Show api={API} path="show" />
-          <Jobs api={API} path="jobs" />
-          <Ask api={API} path="ask" />
+          <New api={API} path="/new" />
+          <Show api={API} path="/show" />
+          <Jobs api={API} path="/jobs" />
+          <Ask api={API} path="/ask" />
         </Router>
       </Suspense>
     </>
