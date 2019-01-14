@@ -4,11 +4,11 @@ import useFetch from "fetch-suspense";
 
 const Top = props => {
   const pageCounter = 1;
-  const data = useFetch(props.api + "news?page=" + pageCounter);
+  const data = useFetch(props.api + "comments?page=" + pageCounter);
   return (
     <ol>
-      {data.map(item => (
-        <StoryItem id={item.id} url={item.url} title={item.title} />
+      {data.map(i => (
+        <StoryItem id={i.id} url={i.url} title={i.title} />
       ))}
     </ol>
   );
